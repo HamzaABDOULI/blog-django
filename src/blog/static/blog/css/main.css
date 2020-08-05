@@ -5,5 +5,23 @@
 
 
 body {
+    margin-
     font-family: 'Source Serif Pro', sans-serif;
 }
+
+.bg-secondary{
+    background-color: #666 !important;
+}
+
+/*
+.bg-light{
+    background-color: #ccc !important;
+}
+*/
+
+/*Post content */
+/*.post {
+    border: 1px solid #CCC;
+}
+
+*/

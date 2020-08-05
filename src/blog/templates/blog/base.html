@@ -1,0 +1,171 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/css/main.css' %}">
+
+    </head>
+
+    <body>
+        <!--Header-->
+        <header>
+            <!--start navbar-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                    <img src="{% static 'blog/images/b-neon.png' %}" alt="logo blog" width="60px" top="2px">
+                    Blog</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto ">
+                    <li class="nav-item active ">
+                      <a class="nav-link " href="#"> Home <span class="sr-only ">(current)</span></a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Courses
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Python</a>
+                        <a class="dropdown-item" href="#">Java</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Web development</a>
+                      </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Who Am I !</a>
+                      </li>
+                    
+                  </ul>
+                  <form class="form-inline mr-auto">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  </form>
+
+                  <ul class="navbar-nav mr-sm-2">
+                    <li class="nav-item "><a class="nav-link" href="#">LogIn</a></li>
+                    <li class="nav-item "><a class="nav-link" href="#">Create an account</a></li>
+                  </ul>
+                </div>
+            </nav>
+            <!--End navbar-->
+        </header>
+
+        <!--Section-->
+        <section>
+
+            <div class="container">
+                <div class="row mt-4">
+                    <div class="col-md-8">
+                      {% block content %}  
+
+
+                      {% endblock content %}
+                    </div>
+                    <!--Side bar-->
+                    <div class="col-md-4">
+
+                        <div class="card mb-3">
+                            <h3 class="text-center bg-secondary text-light p-2">Latest Posts</h3>
+                            <ul>
+                                <li><a href="#">The first post</a></li>
+                                <li><a href="#">The second post</a></li>
+                                <li><a href="#">The third post</a></li>
+                                <li><a href="#">The fourth post</a></li>
+                                <li><a href="#">The fifth post</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="card mb-3">
+                            <h3 class="text-center bg-secondary text-light p-2">Latest Comments</h3>
+                            <ul>
+                                <li><a href="#">The first comment</a></li>
+                                <li><a href="#">The second comment</a></li>
+                                <li><a href="#">The third comment</a></li>
+                                <li><a href="#">The fourth comment</a></li>
+                                <li><a href="#">The fifth comment</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!--Footer-->
+        <footer class="bg-secondary ">
+
+            <div class="container-fluid">
+
+                <div class="row">
+                    <div class="col-md">
+                        <div class="card-group mt-3">
+
+                            <div class="card m-3">
+                                <h3 class="card-title text-center border-bottom p-2 m-3 ">
+                                    Who Am I
+                                </h3>
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        <img src="{% static 'blog/images/b-neon.png' %}" alt="logo" width="75px">
+                                        <div>I'm ...............</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card m-3">
+                                <h3 class="card-title text-center border-bottom p-2 m-3 ">
+                                    Important Sites
+                                </h3>
+                                <div class="card-body">
+                                    <ul>
+                                        <li><a href="#">The first site</a></li>
+                                        <li><a href="#">The second site</a></li>
+                                        <li><a href="#">The third site</a></li>
+                                        <li><a href="#">The fourth site</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card m-3">
+                                <h3 class="card-title text-center border-bottom p-2 m-3 ">
+                                    Social Media
+                                </h3>
+                                <h2 class="card-body text-center">
+                                    <a class="text-secondary" href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a class="text-secondary" href="#"><i class="fab fa-facebook"></i></a>
+                                    <a class="text-secondary" href="#"><i class="fab fa-twitter"></i></a>
+                                    <a class="text-secondary" href="#"><i class="fab fa-instagram"></i></a>
+                                    <a class="text-secondary" href="#"><i class="fab fa-youtube"></i></a>
+                                    <a class="text-secondary" href="#"><i class="fab fa-telegram"></i></a>
+                                </h2>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row p-2">
+                    <div class="col-md text-center ">
+                        <small>&copy; Hamza ABDOULI</small>
+                    </div>
+                </div>  
+
+            </div>
+
+        </footer>
+
+        <script src="{% static 'blog/js/jquery-3.4.1.slim.min.js' %}"></script>
+        <script src="{% static 'blog/js/popper.min.js' %}"></script>
+        <script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'blog/js/fontawesome-all.min.js' %}"></script>
+    </body>
+</html>
