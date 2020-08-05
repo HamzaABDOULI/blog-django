@@ -1,3 +1,9 @@
-body{
-    color: blue;
+@font-face {
+    font-family: 'Source Serif Pro' ;
+    src: url('../fonts/SourceSerifPro-Regular.ttf') format("truetype"), local('Source Serif Pro') ;
+}
+
+
+body {
+    font-family: 'Source Serif Pro', sans-serif;
 }
