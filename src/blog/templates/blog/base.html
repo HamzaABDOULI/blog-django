@@ -4,8 +4,18 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        {% if title %}
+        
+        <title>Blog | {{title}}</title>
+
+        {% else %}
+
+        <title>Blog</title>
+
+        {% endif %}
         <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'blog/css/main.css' %}">
+        <link rel="shortcut icon" href="{% static 'blog/images/b-neon.png'%}">
 
     </head>
 
@@ -24,7 +34,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mr-auto ">
                     <li class="nav-item active ">
-                      <a class="nav-link " href="#"> Home <span class="sr-only ">(current)</span></a>
+                        <a class="nav-link" href="{% url 'home' %}"> Home <span class="sr-only ">(current)</span></a>
                     </li>
                     
                     <li class="nav-item dropdown">
@@ -40,7 +50,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Who Am I !</a>
+                        <a class="nav-link" href="{% url 'about' %}">Who Am I !</a>
                       </li>
                     
                   </ul>
