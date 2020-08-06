@@ -18,8 +18,11 @@ def about(request):
 
 def post_detail(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
+    comment = post.comments.filter(active=True)
     context = {
         'title' : post,
-        'post' : post
+        'post' : post,
+        'comments':comment
+
     } 
     return render(request, 'blog/detail.html', context)   
