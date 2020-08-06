@@ -42,3 +42,11 @@ body {
     border-bottom: 0;
     padding-bottom: 0;
 }
+/* End Sidebar */
+
+/* Start Comment */
+.comment{
+    background-color: #f8f8f8;
+    border: 1px dashed #CCCCCC;
+}
+/* End Comment */

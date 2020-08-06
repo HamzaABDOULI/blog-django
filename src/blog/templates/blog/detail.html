@@ -11,19 +11,22 @@
         <strong>Content : </strong>{{post.content}}
     </div>
 
-    <div>
-        <h2 class="border-bottom" >Comments ({{comments.count}}) :</h2>
+    
+        <h2 class="border-bottom mt-5 mb-3 " >Comments ({{comments.count}}) :</h2>
         {% if comments %}
             {% for comment in comments %}
-                <small>{{comment.name}} in {{comment.comment_date|date:'P d-m-Y'}}</small>
-                <h6>{{comment.body}}</h6>
+            <div class="mb-3 p-3 comment">
+                <h6 class="border-bottom p-2">( {{comment.name}} ) 
+                    <span class="text-secondary">in {{comment.comment_date|date:'P d-m-Y'}}</span></h6>
+                <p class="mb-0 ml-4 ">{{comment.body}}</p>
+            </div>
             {% endfor %}
         {% else %}
                 <div class="text-center mb-3 p-3 comment">
-                    <h4>No Comments</h4>
+                    <h4 class="mb-0">No Comments</h4>
                 </div>
         {% endif %}
 
-    </div>
+    
 
 {% endblock content %}

@@ -83,19 +83,13 @@
                     <div class="col-md-4">
 
                         <div class="card mb-3">
-                            <h3 class="text-center bg-secondary text-light p-2">Latest Posts</h3>
+                            <h3 class="text-center bg-secondary text-light p-2">Latest Posts ({{posts.count}})</h3>
                             {% include 'blog/latest_posts.html' %}
                         </div>
 
                         <div class="card mb-3">
-                            <h3 class="text-center bg-secondary text-light p-2">Latest Comments</h3>
-                            <ul>
-                                <li><a href="#">The first comment</a></li>
-                                <li><a href="#">The second comment</a></li>
-                                <li><a href="#">The third comment</a></li>
-                                <li><a href="#">The fourth comment</a></li>
-                                <li><a href="#">The fifth comment</a></li>
-                            </ul>
+                            <h3 class="text-center bg-secondary text-light p-2">Latest Comments ({{comments.count}})</h3>
+                            {% include 'blog/latest_comments.html'%}
                         </div>
 
                     </div>
