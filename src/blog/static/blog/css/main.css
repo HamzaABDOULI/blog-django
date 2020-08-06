@@ -5,7 +5,6 @@
 
 
 body {
-    margin-
     font-family: 'Source Serif Pro', sans-serif;
 }
 
@@ -25,3 +24,21 @@ body {
 }
 
 */
+
+/* Start Sidebar */
+.latest-post, .latest-comment{
+    padding: 0 15px;
+}
+
+.latest-post .latest-post-item, .latest-comment .latest-comment-item{
+    padding: 6px;
+    }
+
+.latest-post li:first-child, .latest-comment li:first-child{
+    border-top: 0;
+}
+
+.latest-post li:last-child, .latest-comment li:last-child{
+    border-bottom: 0;
+    padding-bottom: 0;
+}
