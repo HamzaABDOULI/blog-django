@@ -1,7 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-
+{% load crispy_forms_tags %}
     <div class="border p-3 mb-3">
         
         <img src="../../static/blog/images/user.jpg" 
@@ -26,6 +26,16 @@
                     <h4 class="mb-0">No Comments</h4>
                 </div>
         {% endif %}
+
+        <!-- Comment Form -->
+        <h3 class="border-bottom mb-3 mt-5 pb-3">Add a new comment</h3>
+        <div class="border p-4 mb-5 mt-4">
+            <form method="POST">
+                {% csrf_token %}
+                {{comment_form|crispy}}
+                <input class="btn btn-secondary mb-4" type="submit" value="Submit">
+            </form>
+        </div>    
 
     
 
