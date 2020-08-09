@@ -1,0 +1,18 @@
+
+        <div class="mb-5 pt-3 mt-4 trxt-center">
+
+            {% if page.has_previous %}
+            <a class="btn btn-secondary bg-secondary" href="?page={{page.previous_page_number}}">Previous page</a>
+            {% else %}
+            <a class="btn btn-secondary bg-secondary disabled" href="#">Previous page</a>
+            {% endif %}
+
+            <span class="pr-4 pl-4">Page {{page.number}}/{{page.paginator.num_pages}}</span>
+
+            {% if page.has_next %}
+            <a class="btn btn-secondary bg-secondary" href="?page={{page.next_page_number}}">Next page</a>
+            {% else %}
+            <a class="btn btn-secondary bg-secondary disabled" href="#">Next page</a>
+            {% endif %}
+        </div>
+

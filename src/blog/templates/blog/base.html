@@ -40,18 +40,18 @@
                     
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Courses
+                        Explore
                       </a>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Python</a>
-                        <a class="dropdown-item" href="#">Java</a>
+                        <a class="dropdown-item" href="#">Topics</a>
+                        <a class="dropdown-item" href="#">Trending</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Web development</a>
+                        <a class="dropdown-item" href="#">Collections</a>
                       </div>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'about' %}">Who Am I !</a>
+                        <a class="nav-link" href="{% url 'about' %}">Team !</a>
                       </li>
                     
                   </ul>
@@ -59,11 +59,25 @@
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                   </form>
+                  
+                  {% if user.is_authenticated %}
 
                   <ul class="navbar-nav mr-sm-2">
-                    <li class="nav-item "><a class="nav-link" href="#">LogIn</a></li>
-                    <li class="nav-item "><a class="nav-link" href="#">Create an account</a></li>
+                    <li class="nav-item "><a class="nav-link" href="">New post</a></li>
+                    <li class="nav-item "><a class="nav-link" href="{% url 'profile' %}">Profile</a></li>
+                    <li class="nav-item "><a class="nav-link" href="{% url 'logout' %}">Sign out</a></li>
                   </ul>
+
+                  {% else %}
+
+                  <ul class="navbar-nav mr-sm-2">
+                    <li class="nav-item "><a class="nav-link" href="{% url 'login' %}">Sign in</a></li>
+                    <li class="nav-item "><a class="nav-link" href="{% url 'register' %}">Sign up</a></li>
+                  </ul>
+
+                  {% endif %}
+
+                  
                 </div>
             </nav>
             <!--End navbar-->
@@ -84,12 +98,12 @@
                     <div class="col-md-4">
 
                         <div class="card mb-3">
-                            <h3 class="text-center bg-secondary text-light p-2">Latest Posts ({{posts.count}})</h3>
+                            <h3 class="text-center bg-secondary text-light p-2">Latest Posts </h3>
                             {% latest_posts %}
                         </div>
 
                         <div class="card mb-3">
-                            <h3 class="text-center bg-secondary text-light p-2">Latest Comments ({{comments.count}})</h3>
+                            <h3 class="text-center bg-secondary text-light p-2">Latest Comments </h3>
                             {%  latest_comments %}
                         </div>
 
