@@ -28,7 +28,6 @@ class UserCreationForm(forms.ModelForm):
         return cd['username']    
 
 class LoginForm(forms.ModelForm):
-
     password = forms.CharField(widget=forms.PasswordInput())
     class Meta:
         model = User

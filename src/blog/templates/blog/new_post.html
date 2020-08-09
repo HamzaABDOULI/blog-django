@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+    
+    <!-- Comment Form -->
+    <div class="border p-4 mb-5 ">
+        <legend class="border-bottom mb-3  pb-1">New post</legend>
+        <form method="POST">
+            {% csrf_token %}
+            {{form|crispy}}
+            <input class="btn btn-secondary mt-4" type="submit" value="POST">
+        </form>
+    </div>    
+
+{% endblock content %}

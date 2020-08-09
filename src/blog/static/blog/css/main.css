@@ -50,3 +50,10 @@ body {
     border: 1px dashed #CCCCCC;
 }
 /* End Comment */
+.btn-editing{
+    float: right;
+}
+
+.back-btn{ 
+    float: right;   
+}

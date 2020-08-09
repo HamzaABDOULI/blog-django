@@ -27,7 +27,6 @@ def register(request):
 def login_user(request):
 
     if request.method == 'POST':
-        form = LoginForm()
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
@@ -36,9 +35,7 @@ def login_user(request):
             return redirect('profile')
         else:
             messages.warning(request, 'Incorrect username or password.')    
-    else:
-        form = LoginForm() 
-    return render(request, 'user/login.html', {'title':'login', 'form':form} )
+    return render(request, 'user/login.html', {'title':'login',} )
 
 
 def logout_user(request):
@@ -49,19 +46,22 @@ def logout_user(request):
 def profile(request):
     posts = Post.objects.filter(author=request.user)
     post_list = Post.objects.filter(author=request.user)
-    paginator = Paginator(posts, 10)
+    paginator = Paginator(post_list, 10)
     page = request.GET.get('page')
     try:
-        posts = paginator.page(page)
+        post_list = paginator.page(page)
     except PageNotAnInteger:
-        posts = paginator.page(1)
+        post_list = paginator.page(1)
     except EmptyPage:
-        posts = paginator.page(paginator.num_page)
-    posts = Post.objects.filter(author=request.user)
-    return render(request, 'user/profile.html', {'title':'profile', 'posts':posts,
-     'page':page,'post_liste':post_list,})
+        post_list = paginator.page(paginator.num_page)
+    return render(request, 'user/profile.html',{
+        'title':'profile',
+         'posts':posts,
+     'page':page,
+     'post_list':post_list
+     })
 
-
+@login_required(login_url='login')
 def profile_update(request):
     if request.method == 'POST':
         user_form = UserUpdateForm(request.POST, instance=request.user)

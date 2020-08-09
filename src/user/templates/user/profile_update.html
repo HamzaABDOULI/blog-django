@@ -8,7 +8,14 @@
         <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{user_form|crispy}}
-            {{profile_form|crispy}}
+            <!-- {{profile_form|crispy}} -->
+        <div>
+            <span class="mb-2" style="display: block">Profile picture *</span>
+            Current image : <a href="{{user.profile.image.url}}">{{user.profile.image}}</a>
+            <br>
+            <label for="image" class="btn btn-outline-secondary mt-2">Select an image</label>
+            <input type="file" name="image" id="image" accept="image/*" style="display: none">
+        </div>    
             <input class="btn btn-secondary mt-4" type="submit" value="Edit">
         </form>
     </div>    
